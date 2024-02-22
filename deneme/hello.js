@@ -8,5 +8,9 @@ console.log("10 ve 20 eklenerek "+toplama(10,20)+" olur.")
 
 
 
-const name=require("./hello2.js")
-console.log("myName: ", name); //bu kodla hello2.js dosyasının içindeki myName değişkenini çağırdım.
+// const name=require("./hello2.js")
+// console.log("myName: ", name); //bu kodla hello2.js dosyasının içindeki myName değişkenini çağırdım.
+
+const mult=require("./hello2.js")
+const ansver=mult(4,-2)
+console.log("4*-2=",ansver)

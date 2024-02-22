@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "chalk": "^4.0.0",
+    "chalk": "4.0",
     "nodemon": "^3.0.3",
     "validator": "^13.11.0"
   }

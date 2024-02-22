@@ -1,12 +1,15 @@
 console.log("helllo  node gusyys")
 
 
+
+// require("./utils.js")
+
+
 const fs=require("fs")
 
-require("./utils.js")
-fs.writeFileSync("notes.txt","hellooooo ppppdpfdpfdfqqqqqqqqqqqqqqqqqqqqqqqqqqqj\n")
+fs.writeFileSync("notes.txt","merhaba node js \n")
 
 
-fs.appendFileSync("notes.txt","hellooooo ppppdpfdpfdfqqqqqqqqqqqqqqqqqqqqqqqqqqqj\n")
+fs.appendFileSync("notes.txt","node js devam \n")
 
 

@@ -1,0 +1,14 @@
+{
+  "name": "lab",
+  "version": "1.0.0",
+  "description": "",
+  "main": "y.js",
+  "scripts": {
+    "test": "123"
+  },
+  "author": "module",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrapt": "^1.2.0"
+  }
+}

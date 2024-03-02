@@ -3,7 +3,7 @@ const { required } = require("nodemon/lib/config")
 console.log("teori dersi hafta -2 ")
 
 
-console.log(process.argv)
+// console.log(process.argv)
 
 
 const command=process.argv[2]  // argumanların çekilmesi
@@ -27,4 +27,6 @@ yargs.version="1.0.0"
 // yargs argumanlarının incelenmesi 
 console.log(yargs.argv)
 
-console.log(yargs.argv.ver)
+
+
+

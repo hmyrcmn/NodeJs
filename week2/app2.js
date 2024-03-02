@@ -4,33 +4,29 @@ const yargs= require("yargs");
 yargs.version="1.0.0"
 
 // yargs argumanlarının incelenmesi 
+// yargs argumanlarının incelenmesi
 yargs.command({
-        command:'add',
-        // --help ile gözükmesini istediğimiz açıklamanın tanımlanması 
+        command: 'add',
+        // --help ile gözükmesini istediğimiz açıklamanın tanımlanması
         describe: "yeni not ekler",
-        builder:{
-                title: {
-                    describe:'not basligi belirlenir.',
-                    demandOption:true,
-                    type:"string"
-
-
-                },
-                body: {
-                        describe:'not icerigi belirlenir.',
-                        demandOption:true,
-                        type:'string'
-                        
-        
-                }
+        builder: {
+            title: {
+                describe: 'not basligi belirlenir.',
+                demandOption: true,
+                type: "string"
+            },
+            body: {
+                describe: 'not icerigi belirlenir.',
+                demandOption: true,
+                type: 'string'
+            }
         },
         // komut giirldiğinde ne yapılacagının belirlenmesi
-        handler: function(){
-                console.log("baslik:", argv.title);
-                console.log("title içeriği:", argv.body)
-              }
-        
-})
+        handler: function (argv) {
+            console.log("baslik:", argv.title);
+            console.log("title içeriği:", argv.body);
+        }
+    });
 yargs.command({
         command:'remove',
         describe:"not siler",

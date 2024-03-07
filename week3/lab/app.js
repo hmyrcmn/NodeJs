@@ -7,8 +7,7 @@ yargs.version="1.0.0"
 
 
 
-yargs.command({
-        command: '+', // add de yazabiliriz sorun olmuyor 
+yargs.command({        command: '+', // add de yazabiliriz sorun olmuyor 
         describe: 'Toplama işlemi',
         builder: {
             num1: {

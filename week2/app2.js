@@ -1,6 +1,9 @@
 // import yargs module
 const command = require("nodemon/lib/config/command");
 const yargs= require("yargs");
+
+const notes =require("./notes.js") 
+
 yargs.version="1.0.0"
 
 // yargs argumanlarının incelenmesi 
@@ -23,15 +26,31 @@ yargs.command({
         },
         // komut giirldiğinde ne yapılacagının belirlenmesi
         handler: function (argv) {
-            console.log("baslik:", argv.title);
-            console.log("title içeriği:", argv.body);
+                notes.addNote(argv.title, argv.body);
+        //     console.log("baslik:", argv.title);
+        //     console.log("title içeriği:", argv.body);
+
+
         }
     });
 yargs.command({
         command:'remove',
         describe:"not siler",
+        builder: {
+                title: {
+                    describe: 'not basligi silinir.',
+                    demandOption: true,
+                    type: "string"
+                },
+                body: {
+                    describe: 'not icerigi belirlenir.',
+                    demandOption: true,
+                    type: 'string'
+                }
+            },
         handler:function() {
-                console.log('Bir not silindi');
+                // console.log('Bir not silindi');
+                notes.removeNote(process.argv[3]);
                 }
         })
 yargs.command({
@@ -51,4 +70,5 @@ yargs.command({
         
 })
 
-yargs.argv;
+// yargs.argv;
+yargs.parse()

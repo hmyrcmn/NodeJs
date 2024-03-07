@@ -45,7 +45,8 @@ const myEvent2 = {
             this.guestList.forEach( (guest) => {
                 console.log("- " +this.name); 
                 // console.log("-" + guest);
-            });
+            })
+            // hellooo
         }
     };
     

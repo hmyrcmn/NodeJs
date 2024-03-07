@@ -48,9 +48,9 @@ yargs.command({
                     type: 'string'
                 }
             },
-        handler:function() {
+        handler:function(argv) {
                 // console.log('Bir not silindi');
-                notes.removeNote(process.argv[3]);
+                notes.removeNote(argv.title);
                 }
         })
 yargs.command({

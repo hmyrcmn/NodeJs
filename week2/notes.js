@@ -56,13 +56,15 @@ const loadNotes = function () {
 
 const removeNote = function (title) {
     const notes = loadNotes();
-    const notesToKeep = notes.filter(function (note) {
+    
+    // Silmek istediğiniz notun başlığı ile eşleşmeyen notları içeren bir dizi oluşturun
+    const filteredNotes = notes.filter(function (note) {
         return note.title !== title;
     });
 
-    if (notes.length > notesToKeep.length) {
+    if (notes.length !== filteredNotes.length) {
         console.log(chalk.greenBright.inverse("Note removed!"));
-        saveNotes(notesToKeep);
+        saveNotes(filteredNotes);
     } else {
         console.log(chalk.redBright.inverse("Note not found!"));
     }

@@ -1,10 +1,6 @@
-// import yargs module
-const command = require("nodemon/lib/config/command");
-const yargs= require("yargs");
-
-const notes =require("./notes.js") 
-
-yargs.version="1.0.0"
+const yargs=require('yargs');
+const notes=require('./notes.js') 
+yargs.version='1.0.0'
 
 // yargs argumanlarının incelenmesi 
 // yargs argumanlarının incelenmesi
@@ -25,7 +21,7 @@ yargs.command({
             }
         },
         // komut giirldiğinde ne yapılacagının belirlenmesi
-        handler: function (argv) {
+        handler (argv) {
                 notes.addNote(argv.title, argv.body);
         //     console.log("baslik:", argv.title);
         //     console.log("title içeriği:", argv.body);
@@ -48,7 +44,7 @@ yargs.command({
                     type: 'string'
                 }
             },
-        handler:function(argv) {
+        handler(argv) {
                 // console.log('Bir not silindi');
                 notes.removeNote(argv.title);
                 }
@@ -56,16 +52,28 @@ yargs.command({
 yargs.command({
         command:'list',
         describe:"notları listeler",
-        handler:function(){
-                console.log("notlar listelendi")
+        handler(){
+                notes.listNotes();
         }
 })
 
 yargs.command({
         command:'read',
         describe:"seçilen notu gösterir",
-        handler:function () {
-                console.log("Seçili not okunuyor..");
+        // handler:function () {
+        //         console.log("Seçili not okunuyor..");
+        // }
+        // ARROW FONK A DÖNÜŞTÜTRÜLDÜ
+        builder: {
+                title: {
+                    describe: 'not okunur.',
+                    demandOption: true,
+                    type: "string"
+                }
+               
+            },
+        handler (argv) {
+                notes.readNotes(argv.title);
         }
         
 })

@@ -26,7 +26,17 @@ request({url:url,json:true},(error,response)=> {
 const geocodeUrl="https://api.mapbox.com/geocoding/v5/mapbox.places/bursa.json?proximity=ip&access_token=pk.eyJ1IjoiaG15cmNtbiIsImEiOiJjbHR6aW00enUwMGRuMmp0NGNyczVseGxuIn0.qgdxfBjW5ccrcv4JUd1yJw"
 
 request({url:geocodeUrl,json:true},(error,response)=> {
-   const longitude=response.body.features[0].center[0]
-   const latitude=response.body.features[0].center[1]
-   console.log("enlem:",latitude+ "\n boylam:" ,longitude);
+
+        if (error) {
+                console.log("Mapbox API'sine bağlantı kurulamadı!");
+            } else if (response.body.features.length === 0) {
+                console.log("Belirtilen konum bilgisi bulunamadı!");
+            } else {
+                const longitude = response.body.features[0].center[0];
+                const latitude = response.body.features[0].center[1];
+                console.log("Enlem:", latitude, "\nBoylam:", longitude);
+            }
+//    const longitude=response.body.features[0].center[0]
+//    const latitude=response.body.features[0].center[1]
+//    console.log("enlem:",latitude+ "\n boylam:" ,longitude);
 })
